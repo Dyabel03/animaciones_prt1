@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'SuperMarioFont';
+    src: url('font/SuperMario256.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'SuperMarioFont', Fallback, sans-serif;
+}
+.container {
+    position: relative;
+    height: 406px;
+    background-image: url(map.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 97%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.title h1 {
+    font-size: 4.4em;
+}
+
+
+.title h2 {
+    font-size: 3.8em;
+}
+
+.title h1,
+.title h2 {
+    margin: 0;
+    color: #333;
+}
+
+.title h1 .r{
+    color: #fbcf08;
+}
+
+.title h2 .s{
+    color: #45af49;
+}
+
+.title h1::first-letter {
+    color: #0b9bd7;
+}
+
+.title h2::first-letter {
+    color: #e42926;
+}
+
+
+.bullet {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 380px;
+    animation-name: fire;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.bullet img {
+    width: 100%;
+    height: 100%;
+}
+
+.mario {
+    position: absolute;
+    left: 80px;
+    bottom: 50px;
+    width: 96px;
+    animation-name: gameover;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.mario img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fire {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes gameover {
+    from {
+        transform:  translateY(0);
+    }
+
+    50% {
+        transform:  translateY(-150px);
+    }
+
+    to {
+        transform:  translateY(150px) scale(.1);
+    }
+}
